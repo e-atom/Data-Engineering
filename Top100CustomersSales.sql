@@ -13,12 +13,13 @@ SELECT TOP 100
  ON c.CustomerKey = fs.CustomerKey
  INNER JOIN DimCurrency cu
  ON fs.CurrencyKey = cu.CurrencyKey
+WHERE cu.CurrencyName = 'US Dollar'
  GROUP BY 
     c.FirstName, 
     c.LastName, 
     c.EmailAddress,
     cu.CurrencyName
-HAVING cu.CurrencyName = 'US Dollar'
+
  ORDER BY SalesAmount DESC;
 
 

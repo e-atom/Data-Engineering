@@ -2,9 +2,7 @@
 
 
 --HighestPerformingProducts To LowestPerforming
-
 SELECT
-
     pd.EnglishProductName AS ProductName,
     pd.Color AS ProductColor,
     ISNULL(pd.Size,'UNKWN') AS ProductSize,
