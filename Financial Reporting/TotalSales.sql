@@ -82,3 +82,5 @@ FROM FactResellerSales AS fs
     ON fs.CurrencyKey = dcy.CurrencyKey
     INNER JOIN DimReseller as rs 
     ON fs.ResellerKey = rs.ResellerKey
+
+ORDER BY OrderDate DESC

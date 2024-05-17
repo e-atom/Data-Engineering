@@ -5,12 +5,11 @@ SELECT
     fs.SalesOrderLineNumber AS InvoiceLineNumber,
     fs.OrderDate AS OrderDate,
     fs.SalesAmount AS SalesAmount,
-    
-    dcy.CurrencyName,
-    
     fs.TaxAmt AS TaxAmount,
     fs.Freight AS FreightAmount,
     fs.OrderQuantity AS Quantity,
+
+    dcy.CurrencyName,
 
     dp.EnglishProductName AS ProductName,
     
