@@ -12,12 +12,14 @@ SELECT
     dcy.CurrencyName,
 
     dp.EnglishProductName AS ProductName,
-    
-    dpsc.EnglishProductSubcategoryName AS ProductSubCategory,
+
     dpc.EnglishProductCategoryName AS ProductCategory,
     
-    dst.SalesTerritoryCountry,
-    dst.SalesTerritoryRegion,
+    dpsc.EnglishProductSubcategoryName AS ProductSubCategory,
+  
+    
+    dst.SalesTerritoryCountry AS County,
+    dst.SalesTerritoryRegion AS Region,
     
     dpy.EnglishPromotionName,
     dpy.EnglishPromotionType,
