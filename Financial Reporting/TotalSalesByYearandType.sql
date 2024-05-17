@@ -22,7 +22,8 @@ SELECT
     
     dpy.EnglishPromotionName,
     dpy.EnglishPromotionType,
-    dpy.EnglishPromotionCategory
+    dpy.EnglishPromotionCategory,
+    'Web' AS Source
     
 FROM FactInternetSales AS fs
     INNER JOIN DimProduct AS dp 
@@ -64,7 +65,8 @@ SELECT
     
     dpy.EnglishPromotionName,
     dpy.EnglishPromotionType,
-    dpy.EnglishPromotionCategory
+    dpy.EnglishPromotionCategory,
+    rs.ResellerName AS Source
     
 FROM FactResellerSales AS fs
     INNER JOIN DimProduct AS dp 
@@ -79,6 +81,8 @@ FROM FactResellerSales AS fs
     ON fs.PromotionKey = dpy.PromotionKey
     INNER JOIN DimCurrency as dcy 
     ON fs.CurrencyKey = dcy.CurrencyKey
+    INNER JOIN DimReseller as rs 
+    ON fs.ResellerKey = rs.ResellerKey
 )
 
 SELECT 
