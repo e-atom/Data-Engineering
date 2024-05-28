@@ -3,17 +3,15 @@ import sqlalchemy as sql
 from sqlalchemy.engine import URL
 import pyodbc as odbc
 
-#Driver = ""
-#ServerName = "prod-sql-cfieducation.database.windows.net"
-#DatabaseName = "AdventureWorksDW"
-#UserId = "BI_User"
-#Password = "CFI123456789!"
+driver = "{ODBC Driver 17 for SQL Server}"
+server = "prod-sql-cfieducation.database.windows.net"
+database = "AdventureWorksDW"
+username = "BI_User"
+password = "CFI123456789!"
 
+connectionstring = f'DRIVER={driver};SERVER=tcp:{server};DATABASE={database};UID={username};PWD={password}'
 
-connection = odbc.connect("Driver = {{ODBC Driver 17 for SQL Server}};"
-                          "Server = prod-sql-cfieducation.database.windows.net;"
-                          "Database = AdventureWorksDW;"
-                          "uid= BI_User; pwd=CFI123456789!")
+connection = odbc.connect(connectionstring)
 
 
 df = pd.read_sql_query("SELECT fs.SalesOrderNumber AS InvoiceNumber,\
