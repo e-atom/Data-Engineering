@@ -3,7 +3,7 @@ import sqlalchemy as sql
 from sqlalchemy.engine import URL
 import pyodbc as odbc
 
-driver = "{ODBC Driver 17 for SQL Server}"
+driver = "{ODBC Driver 18 for SQL Server}"
 server = "prod-sql-cfieducation.database.windows.net"
 database = "AdventureWorksDW"
 username = "BI_User"
