@@ -1,0 +1,24 @@
+
+--FactSaleテーブル件数
+SELECT 
+    COUNT(*)
+FROM
+    factSale
+
+--FactSaleテーブルデータ構成
+SELECT
+    COLUMN_NAME name,
+    DATA_TYPE,
+    IS_NULLABLE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME= 'FactSale'
+
+--FactOrderテーブルデータ構成
+SELECT
+    COLUMN_NAME name,
+    DATA_TYPE,
+    IS_NULLABLE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME= 'FactOrder'
+
+
